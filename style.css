@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+*{
+  font-family: 'Poppins', sans-serif;
+  margin:0; padding:0;
+  box-sizing: border-box;
+  outline: none; border:none;
+  text-decoration: none;
+  transition: .2s linear;
+}
+
+h3{
+				font-size: 1rem;
+				letter-spacing: 1px;
+				font-weight: 600;
+				color: #555;
+				font-family: 'Indie Flower', cursive;
+				text-transform: uppercase;
+}
+
+.container .heading{
+  text-align: center;
+  padding-top:7px;
+  color: #680069;
+  font-size: 2rem;
+  border-bottom: 3px solid #333;
+}
+
+.container h1{
+				text-transform: uppercase;
+				font-family: 'Indie Flower', cursive;
+				letter-spacing: 2px;
+}
+
+.container .heading span{
+				font-size: 1rem;
+}
+
+.container .box-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap:20px;
+  padding:20px 9%;
+  background: linear-gradient(70deg, #666, #000000);
+}
+
+.container .box-container.active{
+  padding-bottom: 150px;
+}
+
+.container .box-container .box{
+  border-radius: 5rem 0 5rem 0;
+  background: #fff;
+  box-shadow: 0 3px 7px rgba(0,0,0,.2);
+  padding:15px;
+  cursor: pointer;
+}
+
+.container .box-container .box:hover{
+				border-radius: 0 3rem 0 0;
+}
+
+.container .box-container .box .image{
+  height:540px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 5rem 0 5rem 0;
+  position: relative;
+}
+
+.container .box-container .box .image:hover{
+				border-radius: 0 3rem 0 0;
+}
+
+.container .box-container .box .image img{
+  height:100%;
+  width:100%;
+  object-fit: cover;
+}
+
+.container .box-container .box .image .play{
+  position: absolute;
+  top:0; left:0;
+  height: 100%;
+  width:100%;
+  background: rgba(0,0,0,.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  display: none;
+}
+
+.container .box-container .box:hover .image .play{
+  display: flex;
+}
+
+.container .box-container .box .image .play i{
+  font-size: 100px;
+  color:#fff;
+}
+
+.container .box-container .box .content{
+  padding-top: 15px;
+}
+
+.music-player{
+  position: fixed;
+  bottom: -125px; left:0; right:0;
+  background: #fff;
+  z-index: 1000;
+}
+
+.music-player.active{
+  bottom: 0;
+}
+
+.music-player .music-title{
+  font-size: 1rem;
+  margin-bottom: 5px;
+  border-top: 3px solid #333;
+  border-bottom: 1px solid #333;
+  text-align: center;
+  color:#333;
+  padding:10px;
+}
+
+.music-player audio{
+  width: 100%;
+}
+
+.music-player audio::-webkit-media-controls-enclosure{
+  border-radius: 0;
+  background: #fff;
+}
+
+.music-player #close-player{
+  position: absolute;
+  top:-40px; right:0px;
+  height: 40px;
+  width: 45px;
+  line-height: 40px;
+  cursor: pointer;
+  font-size: 20px;
+  color:#333;
+  background: #fff;
+  border: 3px double #333;
+  border-radius: 0 1rem 0 1rem;
+  border-bottom: none;
+  text-align: center;
+}
+
+@media (max-width:768px) {
+  .container .box-container{
+    padding:20px;
+  }
+}
+
+@media (max-width:450px) {
+  .container .box-container{
+    grid-template-columns: 1fr;
+  }
+
+  .container .box-container .box .image{
+    height: 300px;
+  }
+}
